@@ -46,12 +46,12 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY','Ayodeji-1212')
 # Check if the application is running in a production environment (e.g., on Render)
 if os.environ.get('FLASK_ENV') == 'production':
     # Set the database URI from environment variables
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('sqlite:///famouzcoder_ehr_database.db')
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 else:
     # Set the database URI for local development
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///famouzehr_database.db'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('sqlite:///famouzcoder_ehr_database.db')
+# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('sqlite:///famouzcoder_ehr_database.db')
 
 # Initialize the SQLAlchemy database with your app
 db = SQLAlchemy(app)
