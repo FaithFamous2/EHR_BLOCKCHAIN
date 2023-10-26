@@ -51,7 +51,7 @@ else:
     # Set the database URI for local development
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///famouzehr_database.db'
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('sqlite:///famouzcoder_ehr_database.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('sqlite:///famouzcoder_ehr_database.db')
 
 # Initialize the SQLAlchemy database with your app
 db = SQLAlchemy(app)
