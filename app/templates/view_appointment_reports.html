@@ -1,0 +1,15 @@
+<!-- view_appointment_reports.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+  <h4>Appointments</h4>
+  <ul>
+    {% for appointment in patient_appointments %}
+    <li>
+      {{ appointment.date }} - {{ doctor_info[appointment.doctor_id] }}
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

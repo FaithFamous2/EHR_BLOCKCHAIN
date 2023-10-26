@@ -1,0 +1,153 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+h2 {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+}
+
+p {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin: 10px;
+}
+
+/* Additional CSS for specific elements */
+.record-id {
+    background-color: #f0f0f0;
+}
+
+.timestamp {
+    font-weight: bold;
+}
+
+.patient-id {
+    background-color: #e0e0e0;
+    border: 1px solid #bbb;
+    margin-top: 20px;
+}
+
+/* Add more CSS styles for other specific elements */
+/* styles.css */
+/* ... (previous styles) */
+
+.diagnosis {
+    font-weight: bold;
+    color: #FF5733;
+}
+
+.prescriptions {
+    font-style: italic;
+    border-left: 4px solid #4CAF50;
+    padding-left: 10px;
+}
+
+.test-results {
+    font-size: 14px;
+    color: #007bff;
+    background-color: #f0f0f0;
+}
+
+/* Add more CSS styles for the newly added fields */
+/* Allergies or Sensitivities */
+.allergies {
+    font-weight: bold;
+    color: #E74C3C; /* Red text color */
+    margin-top: 10px;
+    /* Add any other styles you want */
+}
+
+/* Immunization Records */
+.immunization-records {
+    font-weight: bold;
+    color: #27AE60; /* Green text color */
+    margin-top: 10px;
+    /* Add any other styles you want */
+}
+
+/* Detailed Medical History */
+.medical-history {
+    font-weight: bold;
+    color: #3498DB; /* Blue text color */
+    margin-top: 10px;
+    /* Add any other styles you want */
+}
+
+/* History of Medical Procedures */
+.procedures {
+    font-weight: bold;
+    color: #F1C40F; /* Yellow text color */
+    margin-top: 10px;
+    /* Add any other styles you want */
+}
+
+/* Laboratory Reports */
+.lab-reports {
+    font-weight: bold;
+    color: #9B59B6; /* Purple text color */
+    margin-top: 10px;
+    /* Add any other styles you want */
+}
+
+/* Vital Signs Data */
+.vitals {
+    font-weight: bold;
+    color: #1ABC9C; /* Teal text color */
+    margin-top: 10px;
+    /* Add any other styles you want */
+}
+
+/* Additional Medical Notes */
+.notes {
+    font-weight: bold;
+    color: #E67E22; /* Orange text color */
+    margin-top: 10px;
+    /* Add any other styles you want */
+}
+
+/* Family Medical History */
+.family-history {
+    font-weight: bold;
+    color: #F39C12; /* Yellow text color */
+    margin-top: 10px;
+    /* Add any other styles you want */
+}
+
+/* Social and Lifestyle History */
+.social-history {
+    font-weight: bold;
+    color: #D35400; /* Dark Orange text color */
+    margin-top: 10px;
+    /* Add any other styles you want */
+}
+
+/* Radiology and Imaging Reports */
+.radiology-reports {
+    font-weight: bold;
+    color: #2ECC71; /* Emerald text color */
+    margin-top: 10px;
+    /* Add any other styles you want */
+}
+
+/* Current and Past Medications */
+.medications {
+    font-weight: bold;
+    color: #34495E; /* Midnight Blue text color */
+    margin-top: 10px;
+    /* Add any other styles you want */
+}
+
+/* Chief Complaint */
+.chief-complaint {
+    font-weight: bold;
+    color: #8E44AD; /* Wisteria text color */
+    margin-top: 10px;
+    /* Add any other styles you want */
+}

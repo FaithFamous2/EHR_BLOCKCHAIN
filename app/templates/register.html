@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block content %}
+<h2>Register</h2>
+<form method="post">
+  {{ form.hidden_tag() }}
+  <p>{{ form.username.label }} {{ form.username(size=32) }}</p>
+  <p>{{ form.password.label }} {{ form.password(size=32) }}</p>
+  <p>{{ form.confirm_password.label }} {{ form.confirm_password(size=32) }}</p>
+  <p>{{ form.full_name.label }} {{ form.full_name(size=32) }}</p>
+  <p>{{ form.email.label }} {{ form.email(size=32) }}</p>
+  <p>{{ form.role.label }} {{ form.role(size=32) }}</p>
+  <p>{{ form.date_of_birth.label }} {{ form.date_of_birth(type="date") }}</p>
+  <p>{{ form.address.label }} {{ form.address(size=64) }}</p>
+  <!-- Add more fields relevant to both patients and doctors as needed -->
+  <p>{{ form.submit() }}</p>
+</form>
+<p>Already have an account? <a href="/login">Login here</a></p>
+{% endblock %}

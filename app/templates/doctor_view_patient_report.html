@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient EHR Records</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      h3 {
+        font-weight: bold;
+      }
+
+      p {
+        color: #666;
+      }
+
+      h4 {
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        border: 1px solid #ddd;
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #f9f9f9;
+      }
+
+      li strong {
+        color: #333;
+      }
+
+      a {
+        display: block;
+        margin-top: 20px;
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Patient's Electronic Health Records (EHR)</h2>
+
+    <!-- Display patient's name and appointment details -->
+    <h3>Patient: {{ appointment.get_patient().full_name }}</h3>
+    <p>Appointment Date: {{ appointment.date.strftime('%Y-%m-%d') }}</p>
+    <p>Appointment Time: {{ appointment.time.strftime('%H:%M') }}</p>
+    <p>Appointment Details: {{ appointment.details }}</p>
+
+    <!-- Display EHR records -->
+    <h4>EHR Records:</h4>
+    <ul>
+      {% for ehr_record in ehr_records %}
+      <li>
+        <strong>Date:</strong> {{ ehr_record.timestamp.strftime('%Y-%m-%d
+        %H:%M:%S') }}<br />
+        <strong>Diagnosis:</strong> {{ ehr_record.diagnosis }}<br />
+        <strong>Prescriptions:</strong> {{ ehr_record.prescriptions }}<br />
+        <strong>Test Results:</strong> {{ ehr_record.test_results }}<br />
+        <strong>Allergies or Sensitivities:</strong> {{ ehr_record.allergies
+        }}<br />
+        <strong>Immunization Records:</strong> {{
+        ehr_record.immunization_records }}<br />
+        <strong>Detailed Medical History:</strong> {{ ehr_record.medical_history
+        }}<br />
+        <strong>History of Medical Procedures:</strong> {{ ehr_record.procedures
+        }}<br />
+        <strong>Laboratory Reports:</strong> {{ ehr_record.lab_reports }}<br />
+        <strong>Vital Signs Data:</strong> {{ ehr_record.vitals }}<br />
+        <strong>Additional Medical Notes:</strong> {{ ehr_record.notes }}<br />
+        <strong>Family Medical History:</strong> {{ ehr_record.family_history
+        }}<br />
+        <strong>Social and Lifestyle History:</strong> {{
+        ehr_record.social_history }}<br />
+        <strong>Radiology and Imaging Reports:</strong> {{
+        ehr_record.radiology_reports }}<br />
+        <strong>Current and Past Medications:</strong> {{ ehr_record.medications
+        }}<br />
+        <strong>Chief Complaint:</strong> {{ ehr_record.chief_complaint }}<br />
+        <!-- Add more EHR details here -->
+      </li>
+      {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('dashboard') }}">Back to Doctor Dashboard</a>
+  </body>
+</html>

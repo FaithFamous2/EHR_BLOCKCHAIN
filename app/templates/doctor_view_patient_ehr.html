@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Patient's Electronic Health Records (EHR)</h2>
+
+    <!-- Display patient's name and appointment details -->
+    <h3>Patient: {{ appointment.get_patient().full_name }}</h3>
+    <p>Appointment Date: {{ appointment.date.strftime('%Y-%m-%d') }}</p>
+    <p>Appointment Time: {{ appointment.time.strftime('%H:%M') }}</p>
+    <p>Appointment Details: {{ appointment.details }}</p>
+
+    <!-- Display EHR records -->
+    <form method="post">
+        {{ form.hidden_tag() }} {# Include the CSRF token #}
+
+        <h3>Medical Records</h3>
+        {{ form.medical_records.label }}
+        {{ form.medical_records }}
+
+        <h3>Diagnosis</h3>
+        {{ form.diagnosis.label }}
+        {{ form.diagnosis }}
+
+        <h3>Prescriptions</h3>
+        {{ form.prescriptions.label }}
+        {{ form.prescriptions }}
+
+        <h3>Test Results</h3>
+        {{ form.test_results.label }}
+        {{ form.test_results }}
+
+        <h3>Allergies or Sensitivities</h3>
+        {{ form.allergies.label }}
+        {{ form.allergies }}
+
+        <h3>Immunization Records</h3>
+        {{ form.immunization_records.label }}
+        {{ form.immunization_records }}
+
+        <h3>Detailed Medical History</h3>
+        {{ form.medical_history.label }}
+        {{ form.medical_history }}
+
+        <h3>History of Medical Procedures</h3>
+        {{ form.procedures.label }}
+        {{ form.procedures }}
+
+        <h3>Laboratory Reports</h3>
+        {{ form.lab_reports.label }}
+        {{ form.lab_reports }}
+
+        <h3>Vital Signs Data</h3>
+        {{ form.vitals.label }}
+        {{ form.vitals }}
+
+        <h3>Additional Medical Notes</h3>
+        {{ form.notes.label }}
+        {{ form.notes }}
+
+        <h3>Family Medical History</h3>
+        {{ form.family_history.label }}
+        {{ form.family_history }}
+
+        <h3>Social and Lifestyle History</h3>
+        {{ form.social_history.label }}
+        {{ form.social_history }}
+
+        <h3>Radiology and Imaging Reports</h3>
+        {{ form.radiology_reports.label }}
+        {{ form.radiology_reports }}
+
+        <h3>Current and Past Medications</h3>
+        {{ form.medications.label }}
+        {{ form.medications }}
+
+        <h3>Chief Complaint</h3>
+        {{ form.chief_complaint.label }}
+        {{ form.chief_complaint }}
+
+        {{ form.submit(class="btn btn-primary") }}
+
+    </form>
+
+
+      <a href="{{ url_for('dashboard') }}">Back to Doctor Dashboard</a>
+    </div>
+    {% endblock %}

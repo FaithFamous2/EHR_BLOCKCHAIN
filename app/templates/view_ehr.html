@@ -1,0 +1,72 @@
+{% extends "base.html" %} {% block content %}
+<h2>Electronic Health Record (EHR)</h2>
+
+<div class="ehr-details">
+  <p><strong>Date and Time:</strong> {{ ehr_record.timestamp }}</p>
+  <p><strong>Doctor Name:</strong> {{ ehr_record.doctor.full_name }}</p>
+
+  <!-- Medical Records -->
+  <h3>Medical Records</h3>
+  <p>{{ ehr_record.medical_records }}</p>
+
+  <!-- Diagnosis -->
+  <h3>Diagnosis</h3>
+  <p>{{ ehr_record.diagnosis }}</p>
+
+  <!-- Prescriptions -->
+  <h3>Prescriptions</h3>
+  <p>{{ ehr_record.prescriptions }}</p>
+
+  <!-- Test Results -->
+  <h3>Test Results</h3>
+  <p>{{ ehr_record.test_results }}</p>
+
+  <!-- Allergies or Sensitivities -->
+  <h3>Allergies or Sensitivities</h3>
+  <p>{{ ehr_record.allergies }}</p>
+
+  <!-- Immunization Records -->
+  <h3>Immunization Records</h3>
+  <p>{{ ehr_record.immunization_records }}</p>
+
+  <!-- Detailed Medical History -->
+  <h3>Detailed Medical History</h3>
+  <p>{{ ehr_record.medical_history }}</p>
+
+  <!-- History of Medical Procedures -->
+  <h3>History of Medical Procedures</h3>
+  <p>{{ ehr_record.procedures }}</p>
+
+  <!-- Laboratory Reports -->
+  <h3>Laboratory Reports</h3>
+  <p>{{ ehr_record.lab_reports }}</p>
+
+  <!-- Vital Signs Data -->
+  <h3>Vital Signs Data</h3>
+  <p>{{ ehr_record.vitals }}</p>
+
+  <!-- Additional Medical Notes -->
+  <h3>Additional Medical Notes</h3>
+  <p>{{ ehr_record.notes }}</p>
+
+  <!-- Family Medical History -->
+  <h3>Family Medical History</h3>
+  <p>{{ ehr_record.family_history }}</p>
+
+  <!-- Social and Lifestyle History -->
+  <h3>Social and Lifestyle History</h3>
+  <p>{{ ehr_record.social_history }}</p>
+
+  <!-- Radiology and Imaging Reports -->
+  <h3>Radiology and Imaging Reports</h3>
+  <p>{{ ehr_record.radiology_reports }}</p>
+
+  <!-- Current and Past Medications -->
+  <h3>Current and Past Medications</h3>
+  <p>{{ ehr_record.medications }}</p>
+
+  <!-- Chief Complaint -->
+  <h3>Chief Complaint</h3>
+  <p>{{ ehr_record.chief_complaint }}</p>
+</div>
+{% endblock %}

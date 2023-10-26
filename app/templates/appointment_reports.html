@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% block content %}
+<h3>Your Appointments</h3>
+
+<!-- Appointments Section -->
+<div class="dashboard-section">
+  <ul>
+    {% for appointment in appointments %}
+    <li>
+      <strong>Date:</strong> {{ appointment.date.strftime('%Y-%m-%d') }} -
+      <strong>Time:</strong> {{ appointment.time.strftime('%H:%M')}}<br />
+
+      <strong>Doctor Name:</strong> {{ appointment.doctor.full_name }}<br />
+      <strong>Doctor Username:</strong> {{ appointment.doctor.username }}<br />
+      <strong>Details:</strong> {{ appointment.details }}<br />
+
+      <!-- Add a button to request medical records from the patient -->
+      <!-- Add a button to request medical records from the patient
+      <form method="POST" action="{{ url_for('appointment_reports') }}">
+        <input
+          type="hidden"
+          name="patient_id"
+          value="{{ appointment.patient.id }}"
+        />
+        <button type="submit" class="btn btn-primary">
+          Request Medical Records
+        </button>
+      </form>-->
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<style>
+  .dashboard-section {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+  }
+
+  .dashboard-section h4 {
+    margin: 0;
+  }
+</style>
+{% endblock %}

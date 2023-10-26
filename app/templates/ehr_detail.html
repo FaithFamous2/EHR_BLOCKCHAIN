@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EHR Detail</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <h2>EHR Record Detail</h2>
+    <p class="record-id"><strong>Record ID:</strong> {{ ehr_record.id }}</p>
+    <p class="timestamp">
+      <strong>Timestamp:</strong> {{ ehr_record.timestamp }}
+    </p>
+    <p class="patient-id">
+      <strong>Patient ID:</strong> {{ ehr_record.patient_id }}
+    </p>
+
+    <p class="diagnosis">
+      <strong>Diagnosis:</strong> {{ ehr_record.diagnosis }}
+    </p>
+    <p class="prescriptions">
+      <strong>Prescriptions:</strong> {{ ehr_record.prescriptions }}
+    </p>
+    <p class="test-results">
+      <strong>Test Results:</strong> {{ ehr_record.test_results }}
+    </p>
+
+    <p class="allergies">
+      <strong>Allergies or Sensitivities:</strong> {{ ehr_record.allergies }}
+    </p>
+    <p class="immunization-records">
+      <strong>Immunization Records:</strong> {{ ehr_record.immunization_records
+      }}
+    </p>
+    <p class="medical-history">
+      <strong>Detailed Medical History:</strong> {{ ehr_record.medical_history
+      }}
+    </p>
+    <p class="procedures">
+      <strong>History of Medical Procedures:</strong> {{ ehr_record.procedures
+      }}
+    </p>
+    <p class="lab-reports">
+      <strong>Laboratory Reports:</strong> {{ ehr_record.lab_reports }}
+    </p>
+    <p class="vitals">
+      <strong>Vital Signs Data:</strong> {{ ehr_record.vitals }}
+    </p>
+    <p class="notes">
+      <strong>Additional Medical Notes:</strong> {{ ehr_record.notes }}
+    </p>
+    <p class="family-history">
+      <strong>Family Medical History:</strong> {{ ehr_record.family_history }}
+    </p>
+    <p class="social-history">
+      <strong>Social and Lifestyle History:</strong> {{
+      ehr_record.social_history }}
+    </p>
+    <p class="radiology-reports">
+      <strong>Radiology and Imaging Reports:</strong> {{
+      ehr_record.radiology_reports }}
+    </p>
+    <p class="medications">
+      <strong>Current and Past Medications:</strong> {{ ehr_record.medications
+      }}
+    </p>
+    <p class="chief-complaint">
+      <strong>Chief Complaint:</strong> {{ ehr_record.chief_complaint }}
+    </p>
+
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+
+    <!-- Add more fields here -->
+  </body>
+</html>

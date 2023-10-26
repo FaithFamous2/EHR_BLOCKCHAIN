@@ -1,0 +1,33 @@
+<!-- doctor_dashboard.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Welcome, {{ user.username }}</h2>
+
+  <h3>Your Patients</h3>
+  <ul>
+    {% for patient in patients %}
+      <li><a href="{{ url_for('patient_profile', patient_id=patient.id) }}">{{ patient.username }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <h3>Your Appointments</h3>
+  <ul>
+    {% for appointment in appointments %}
+      <li>
+        <strong>Patient:</strong> {{ appointment.get_patient().full_name }}<br>
+        <strong>Date:</strong> {{ appointment.date }}<br>
+        <strong>Time:</strong> {{ appointment.time }}<br>
+        <strong>Details:</strong> {{ appointment.details }}<br>
+        <a href="{{ url_for('doctor_view_patient_ehr', appointment_id=appointment.id) }}" class="btn btn-primary">Add EHM Report</a>
+        <a href="{{ url_for('doctor_view_patient_report', appointment_id=appointment.id) }}" class="btn btn-primary">View EHM Report</a>
+
+
+      </li>
+    {% endfor %}
+  </ul>
+
+  <a href="{{ url_for('schedule_appointment') }}">Schedule Appointment</a>
+</div>
+{% endblock %}

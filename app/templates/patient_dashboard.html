@@ -1,0 +1,105 @@
+{% extends "base.html" %} {% block content %}
+<h2>Welcome, {{ user.username }}</h2>
+<h3>Patient Dashboard</h3>
+
+<!-- Personal Information Section -->
+<div class="dashboard-section">
+  <h4>Personal Information</h4>
+  <p><strong>Name:</strong> {{ user.full_name }}</p>
+  <p><strong>Email:</strong> {{ user.email }}</p>
+  <p><strong>Username:</strong> {{ user.username }}</p>
+  <p><strong>Role:</strong> {{ user.role }}</p>
+  <p><strong>DOB:</strong> {{ user.date_of_birth.strftime('%Y-%m-%d') }}</p>
+  <p><strong>Address:</strong> {{ user.address }}</p>
+  <!-- Add more personal information fields as needed -->
+</div>
+<div class="dashboard-section">
+  <div class="dashboard-section">
+    <div class="dashboard-section">
+        <h4 style="text-decoration-style:none; color: black; text-decoration-line: none;">
+          <a href="/schedule_appointment">Schedule Appoitment</a>
+        </h4>
+      </div>
+
+      <div class="dashboard-section">
+        <h4 style="text-decoration-style:none; color: black; text-decoration-line: none;">
+          <a href="/view_ehr">Health records</a>
+        </h4>
+      </div>
+    <!-- Medical Records Section -->
+    <div class="dashboard-section">
+      <h4>Medical Records</h4>
+      <ul>
+        {% for record in ehr_records %}
+        <li>
+          <a href="{{ url_for('ehr_detail', record_id=record.id) }}"
+            >Record {{ record.id }}</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Appointments Section -->
+    <div class="dashboard-section">
+      <h4 style="text-decoration-style:none; color: black; text-decoration-line: none;">
+        <a href="/appointment_reports">View Appiontment</a>
+      </h4>
+    </div>
+
+    <!-- Test Results Section -->
+    <div class="dashboard-section">
+      <h4>Test Results</h4>
+      <ul>
+        {% for test_result in test_results %}
+        <li>
+          <a
+            href="{{ url_for('test_result_detail', result_id=test_result.id) }}"
+            >{{ test_result.name }}</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Medications Section -->
+    <div class="dashboard-section">
+      <h4>Medications</h4>
+      <ul>
+        {% for medication in medications %}
+        <li>{{ medication.name }} - {{ medication.dosage }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Add more sections and content specific to the patient's dashboard as needed -->
+
+    <!-- Verify EHR Section -->
+    <div class="dashboard-section">
+      <h4>Verify Electronic Health Records (EHR)</h4>
+      <ul>
+        {% for record in ehr_records %}
+        <li>
+          <a href="{{ url_for('verify_ehr', ehr_id=record.id) }}"
+            >Verify Record {{ record.id }}</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <style>
+    .dashboard-section {
+      margin: 20px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f8f8f8;
+    }
+
+    .dashboard-section h4 {
+      margin: 0;
+    }
+  </style>
+  {% endblock %}
+</div>

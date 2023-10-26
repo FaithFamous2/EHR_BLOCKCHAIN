@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>View and Modify Electronic Health Record (EHR)</h2>
+    <p><strong>EHR ID:</strong> {{ ehr_record.id }}</p>
+    <p><strong>Patient Name:</strong> {{ ehr_record.patient.name }}</p>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <label for="ehr_data">EHR Data:</label>
+        {{ form.ehr_data() }}
+        {{ form.submit() }}
+    </form>
+    <p><a href="{{ url_for('doctor_dashboard') }}">Back to Doctor Dashboard</a></p>
+</div>
+{% endblock %}
